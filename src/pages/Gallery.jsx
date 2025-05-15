@@ -37,12 +37,12 @@ function Gallery() {
             />
           </div>
 
-          <div class="grid grid-cols-2 gap-7 h-screen px-3">
-            <div class="row-span-2">
+          <div className="grid grid-cols-2 gap-7 h-screen px-3">
+            <div className="row-span-2">
               <img
                 src="/images/gallery_img4.jpg"
                 alt="Large Image"
-                class="w-full h-full object-cover "
+                className="w-full h-full object-cover "
               />
             </div>
 
@@ -50,14 +50,14 @@ function Gallery() {
               <img
                 src="/images/gallery_img5.jpg"
                 alt="Small Image 1"
-                class="w-full h-full object-cover "
+                className="w-full h-full object-cover "
               />
             </div>
             <div>
               <img
                 src="/images/gallery_img6.jpg"
                 alt="Small Image 2"
-                class="w-full h-full object-cover "
+                className="w-full h-full object-cover "
               />
             </div>
           </div>

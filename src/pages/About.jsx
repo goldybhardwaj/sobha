@@ -44,21 +44,21 @@ function About() {
                 </div>
               </div> */}
               <div className="flex justify-around items-center  ">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 max-w-10xl  h-44">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-6 max-w-10xl  h-44 ">
         <div className="w-80 bg-white rounded-4xl shadow-lg p-6 text-center">
-            <p className="text-gray-500 text-sm uppercase">Starting Price</p>
-            <p className="text-teal-500 text-2xl font-bold mt-2">AED 2.25M</p>
+            <p className="text-black-500 text-lg uppercase">25 MILLION SQ.M.</p>
+            <p className={`${styles.color} text-2xl font-bold mt-2`}>of project Delivered</p>
         </div>
 
      
         <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <p className="text-gray-500 text-sm uppercase">Handover</p>
-            <p className="text-teal-500 text-2xl font-bold mt-2">2029</p>
+            <p className="text-gray-500 text-sm uppercase">24 MILLION SQ.M.</p>
+            <p className={`${styles.color} text-2xl font-bold mt-2`}>Of Under Development</p>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6 text-center">
-            <p className="text-gray-500 text-sm uppercase">Payment Plan</p>
-            <p className="text-teal-500 text-2xl font-bold mt-2">75/25</p>
+            <p className="text-gray-500 text-sm uppercase">68 years</p>
+            <p className={`${styles.color} text-2xl font-bold mt-2`}>Of Expertise in Residential</p>
         </div>
     </div>
 </div>
