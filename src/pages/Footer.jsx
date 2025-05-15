@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 
 function Footer() {
   return (
-    <section className="h-76 w-full bg-black text-white">
+    <div className="h-76 w-full bg-black text-white">
       <footer className="py-6">
         <div className="container mx-auto px-4">
          
@@ -28,7 +28,7 @@ function Footer() {
           </div>
         </div>
       </footer>
-    </section>
+    </div>
   );
 }
 

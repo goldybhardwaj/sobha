@@ -30,84 +30,86 @@ function RegisterNow() {
 
 
   return (
-    <section className="h-auto w-screen mt-5">
-      <div className=" mx-20 ">
-        <div className="ml-40">
-          <h1 className={`${styles.register} text-5xl`}>REGISTER NOW</h1>
+    <div className="w-full min-h-screen mt-4 md:mt-6 lg:mt-8 px-4 sm:px-6 md:px-8">
+  <div className="max-w-7xl mx-auto">
+    {/* Title */}
+    <div className="w-full text-center  sm:ml-10 md:ml-8 lg:ml-12 mb-6 md:mb-8">
+      <h1 className={`${styles.register} text-3xl sm:text-4xl md:text-5xl font-bold`}>
+        REGISTER NOW
+      </h1>
+    </div>
+
+    {/* Form and Text Sections */}
+    <div className="flex flex-col lg:flex-row items-center justify-center min-h-[70vh] gap-4 md:gap-6 lg:gap-8">
+      <div className="w-full max-w-4xl flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8">
+        {/* Form Section */}
+        <div className="w-full lg:w-3/5 bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg flex flex-col justify-center">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={user.name}
+                onChange={handleChange}
+                placeholder="Name*"
+                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div>
+              <input
+                name="email"
+                type="email"
+                value={user.email}
+                onChange={handleChange}
+                placeholder="Email*"
+                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div>
+              <input
+                name="phone"
+                type="tel"
+                minLength="10"
+                value={user.phone}
+                onChange={handleChange}
+                placeholder="Phone Number*"
+                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                required
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                value={user.message}
+                onChange={handleChange}
+                placeholder="Message"
+                rows="4"
+                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+              ></textarea>
+            </div>
+            <button
+              className={`${styles.formButton} w-full bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition-colors text-sm sm:text-base font-medium`}
+            >
+              SUBMIT
+            </button>
+          </form>
         </div>
 
-        <div className="flex items-center justify-center min-h-screen p-2">
-          <div className="container mx-auto flex space-x-4 w-full max-w-6xl h-[90vh]">
-            {/* <!-- First Section (Form, more width, full height) --> */}
-            <div className="w-3/5 p-8 rounded-lg shadow-lg flex flex-col justify-center">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={user.name}
-                    onChange={handleChange}
-                    placeholder="Name*"
-                    className="w-full p-3 border border-gray-100 shadow-gray-700 focus:outline-none placeholder-gray-500 rounded-3xl"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                  name="email"
-                    type="email"
-                    value={user.email}
-                    onChange={handleChange}
-                    placeholder="Email*"
-                    className="w-full p-3 border border-gray-100 focus:outline-none  placeholder-gray-500 rounded-3xl"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                  name="phone"
-                    type="number"
-                    minLength="10"
-                    // maxLength="16"
-                    value={user.phone}
-                    onChange={handleChange}
-                    placeholder="Phone Number*"
-                    className="w-full p-3 border border-gray-100  focus:outline-none placeholder-gray-500 rounded-3xl"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <textarea
-                  name="message"
-                  value={user.message}
-                  onChange={handleChange}
-                    placeholder="Message"
-                    rows="4"
-                    className="w-full p-3 border border-gray-100 rounded-3xl focus:outline-none  placeholder-gray-500 "
-                  ></textarea>
-                </div>
-                <button
-                  className={`${styles.formButton} w-full bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700`}
-                >
-                  SUBMIT
-                </button>
-              </form>
-            </div>
-
-            {/* <!-- Second Section (Text, less width, close to form, centered vertically) --> */}
-            <div className="w-2/5 p-7 rounded-lg flex items-center">
-              <h1
-                className={`${styles.fontRegister} w-full text-6xl text-black leading-tight`}
-              >
-                THE BEST DEALS ARE THE RESULTS OF OUR
-                <p className={`${styles.color}`}>EXPERTISE</p>
-              </h1>
-            </div>
-          </div>
+        {/* Text Section */}
+        <div className="w-full lg:w-2/5 p-4 sm:p-6 md:p-7 rounded-lg flex items-center justify-center">
+          <h1
+            className={`${styles.fontRegister} text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight text-center lg:text-left`}
+          >
+            THE BEST DEALS ARE THE RESULTS OF OUR
+            <p className={`${styles.color} mt-2`}>EXPERTISE</p>
+          </h1>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</div>
   );
 }
 

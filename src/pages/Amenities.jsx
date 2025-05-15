@@ -4,7 +4,7 @@ import styles from "./Amenities.module.css";
 function Amenities() {
   return (
 
-    <section>
+    <div className="mx-20 py-4">
 
         <div className="flex justify-center mb-10">
         <h2 className={`${styles.color} text-3xl ${styles.font} `}>
@@ -12,7 +12,7 @@ function Amenities() {
          </h2>
         </div>
 
-        <div className="mx-20 pl-1">
+        <div className="">
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
     
@@ -43,13 +43,13 @@ function Amenities() {
             </div>
         </div>
 
-         <div className="flex justify-end mt-7">
+         <div className="lg:mt-6 sm:mt-3 lg:text-end sm:text-center ">
          <button className={`${styles.galleryButton} text-center  font-medium text-sm  rounded-xl pt-4 pb-4 pl-14 pr-14 hover:bg-black hover:text-white duration-300`}>
             DISCOVER MORE
           </button>
           </div>
     </div>
-    </section>
+    </div>
    
   );
 }

@@ -10,7 +10,7 @@ import PriceTable from './PriceTable';
 
 function HomePage() {
   return (
-    <div>
+    <>
       <HeroPage/>
       <About/>
       <Gallery/>
@@ -19,7 +19,7 @@ function HomePage() {
       <RegisterNow/>
       {/* <Video/> */}
       <Footer/>
-    </div>
+    </>
   )
 }
 
