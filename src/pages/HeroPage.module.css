@@ -1,0 +1,11 @@
+.color{
+   color: #31A59E;
+}
+.galleryButton{
+    background-color: #10828A;
+    color: #ffffff;
+}
+.galleryButton:hover{
+    background-color: black;
+    color: white;
+}
