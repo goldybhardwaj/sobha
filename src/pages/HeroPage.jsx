@@ -1,7 +1,10 @@
-import React from "react";
 import styles from "./HeroPage.module.css";
 
 function HeroPage() {
+
+ 
+
+
   return (
         <div>
       <div className="min-h-screen w-full">
@@ -19,6 +22,7 @@ function HeroPage() {
                     </button>
                   
                           <button
+                           
                             className={`${styles.galleryButton} w-48 sm:w-auto md:w-auto lg:w-64 px-3 py-3 rounded-xl duration-300 md:px-3 md:py-3 lg:px-4 lg:py-3 lg:text-lg md:text-lg sm:text-sm text-sm mx-4 lg:mx-0 md:mx-0 sm:mx-0 cursor-pointer`}
                           >
                            REGISTER NOW
@@ -26,6 +30,7 @@ function HeroPage() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

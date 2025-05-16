@@ -7,9 +7,13 @@ function About() {
       <div className="py-10 px-4 sm:px-6 lg:px-5">
         {/* Title Section */}
         <div className="text-center">
-          <p className={`${styles.color}  flex  justify-center text-xl mb-1`}>
-            Sobha Sector 36
-          </p>
+         <div className="flex justify-center mb-4 lg:mb-6 md:mb-4 sm:mb-4 ">
+                   <h2
+                     className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+                   >
+                   ABOUT
+                   </h2>
+                 </div>
           <p
             className={`${styles.color} ${styles.font} flex justify-center text-3xl mb-5`}
           >
@@ -20,7 +24,7 @@ function About() {
         {/* Description Section */}
         <div className="max-w-6xl mx-auto">
           <p
-            className={`${styles.color} text-base sm:text-lg leading-relaxed text-justify mb-8 px-4 sm:px-8`}
+            className={`${styles.color} ${styles.fontParagraph} leading-relaxed text-justify mb-8 px-4 sm:px-8`}
           >
             Sobha Group is bringing its world-class residential experience to
             Sector 36, Greater Noida, offering luxurious 2, 3 & 4 BHK
@@ -53,7 +57,7 @@ function About() {
                 25 MILLION SQ.M.
               </p>
               <p
-                className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl`}
+                className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl px-0 lg:px-5 md:px-8`}
               >
                 of project Delivered
               </p>

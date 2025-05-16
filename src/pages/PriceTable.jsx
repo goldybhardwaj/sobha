@@ -2,6 +2,14 @@ import React from 'react'
 import styles from "./PriceTable.module.css"
 function PriceTable() {
   return (
+    <div>
+              <div className="flex justify-center   mt-5 lg:mt-4 md:mt-8 sm:mt-8 mb-1 lg:mb-4 md:mb-2 sm:mb-1 ">
+                <h2
+                  className={`${styles.color} text-2xl lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+                >
+                 PRICE
+                </h2>
+              </div>
     <div className="mx-2 sm:mx-4 md:mx-8 lg:mx-16 xl:mx-20">
   <div className="h-auto w-full py-4 sm:py-6 md:py-8 lg:py-10 bg-gray-50">
     <div className="container mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
@@ -53,6 +61,7 @@ function PriceTable() {
       </div>
     </div>
   </div>
+</div>
 </div>
 
   )

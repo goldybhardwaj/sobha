@@ -1,78 +1,79 @@
+// import React,{useState,useRef} from "react";
+// import styles from "./Video.module.css";
+
+// function Video() {
+//   const [isPlaying, setIsPlaying] = useState(false);
+//   const videoRef = useRef(null);
+
+//   const handlePlay = () => {
+//     setIsPlaying(true);
+//     videoRef.current.play();
+//   };
+//   return (
+//     <div className=" w-full px-6 lg:px-20 md:px-15 sm:px-10 my-3 lg:my-8 md:my-6 sm:my-6 ">
+//     <div className="flex justify-center mb-8 lg:mb-8 md:mb-8 sm:mb-8 ">
+//              <h2
+//                className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+//              >
+//               VIDEO
+//              </h2>
+//            </div>
+
+//     <div className="relative">
+//       <video
+//         ref={videoRef}
+//         className="w-full h-auto rounded-lg shadow-lg"
+//         controls={isPlaying}
+//         poster="/images/gallery_img1.jpg"
+//       >
+//         <source src="https://youtu.be/vohdNgsvhy4?t=41" type="video/mp4" />
+//         Your browser does not support the video tag.
+//       </video>
+//       {/* Thumbnail Overlay with Play Button */}
+//       {!isPlaying && (
+//         <div
+//           className="absolute inset-0 flex items-center justify-center cursor-pointer"
+//           onClick={handlePlay}
+//         >
+//           <button className="bg-white bg-opacity-80 rounded-full p-4 hover:bg-opacity-100 transition">
+//             <svg
+//               className="w-12 h-12 text-gray-800"
+//               fill="currentColor"
+//               viewBox="0 0 24 24"
+//               xmlns="http://www.w3.org/2000/svg"
+//             >
+//               <path d="M8 5v14l11-7z" />
+//             </svg>
+//           </button>
+//         </div>
+//       )}
+//     </div>
+//   </div>
+//   );
+// }
+
+// export default Video;
+
 import React from "react";
 import styles from "./Video.module.css";
 
+
 function Video() {
   return (
-    <section className="h-auto w-auto">
-      <div className="mx-20">
-        <div className="flex justify-center mb-10 ">
-          <h2 className={`${styles.color} text-3xl ${styles.font} `}>Video</h2>
-        </div>
-
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* <!-- Video Section 1 --> */}
-            <div className="relative group">
-              <div className="w-full aspect-video">
-                <iframe
-                  className="w-full h-full rounded-lg"
-                  src="https://www.youtube.com/embed/VIDEO_ID_1"
-                  title="Video 1"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 rounded-lg transition-all duration-300 group-hover:bg-opacity-50">
-                <h2 className="text-white text-2xl font-bold mb-4 transition-all duration-300 group-hover:text-lg">
-                  SAMPLE APARTMENT
-                </h2>
-                <p className="text-white text-sm mb-4">
-                  SOBHA SECTOR 36 - AT SECTOR 36, GREATER NOIDA
-                </p>
-                <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:w-16 group-hover:h-16">
-                  <svg
-                    className="w-6 h-6 text-black group-hover:w-8 group-hover:h-8"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            {/* <!-- Video Section 2 --> */}
-            <div className="relative group">
-              <div className="w-full aspect-video">
-                <iframe
-                  className="w-full h-full rounded-lg"
-                  src="https://www.youtube.com/embed/VIDEO_ID_1"
-                  title="Video 1"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 rounded-lg transition-all duration-300 group-hover:bg-opacity-50">
-                <h2 className="text-white text-2xl font-bold mb-4 transition-all duration-300 group-hover:text-lg">
-                  VIRTUAL SITE TOUR
-                </h2>
-                <p className="text-white text-sm mb-4">
-                  SOBHA SECTOR 36 - AT SECTOR 36, GREATER NOIDA
-                </p>
-                <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center transition-all duration-300 group-hover:w-16 group-hover:h-16">
-                  <svg
-                    className="w-6 h-6 text-black group-hover:w-8 group-hover:h-8"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div>
+       <div className="flex mt-5 lg:mt-10 md:mt-10 sm:mt-10 justify-center mb-6 lg:mb-8 md:mb-8 sm:mb-8 ">
+             <h2
+               className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+             >
+              VIDEO
+             </h2>
+           </div>
+    <div className=" h-auto lg:h-screen md:h-screen sm:h-screen w-auto  px-6 lg:px-20 md:px-15 
+    sm:px-10 my-3 lg:my-8 md:my-6 sm:my-6">
+      
+      <iframe className="w-full h-full" src="/Videos/houseTour.mp4"></iframe>
+    </div>
+    </div>
   );
 }
 
