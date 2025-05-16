@@ -7,7 +7,7 @@ function PriceTable() {
                 <h2
                   className={`${styles.color} text-2xl lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
                 >
-                 PRICE
+                PRICE OF APARTMENTS AT SOBHA SECTOR 36
                 </h2>
               </div>
     <div className="mx-2 sm:mx-4 md:mx-8 lg:mx-16 xl:mx-20">

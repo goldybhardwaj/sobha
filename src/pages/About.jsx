@@ -11,7 +11,7 @@ function About() {
                    <h2
                      className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
                    >
-                   ABOUT
+                   ABOUT SOBHA
                    </h2>
                  </div>
           <p
@@ -59,7 +59,7 @@ function About() {
               <p
                 className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl px-0 lg:px-5 md:px-8`}
               >
-                of project Delivered
+                of  Project Delivered
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">

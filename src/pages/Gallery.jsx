@@ -6,11 +6,11 @@ function Gallery() {
     <div className="mx-3 lg:mx-20 md:mx-15 sm:mx-10 pb-2">
       <div className="h-auto w-auto py-4 lg:sm-4 sm:py-4">
         <div className="flex justify-center mb-8 lg:mb-8 md:mb-8 sm:mb-8 ">
-          <h2
+          <h2 className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
           >
             GALLERY
           </h2>
-            className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+            
         </div>
 
         <div className=" ">
