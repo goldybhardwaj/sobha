@@ -4,11 +4,11 @@
  .font{
     font-weight: 600;
  }
- .galleryButton{
+ .aminitiesButton{
     background-color: #31A59E;
     color: #ffffff;
 }
-.galleryButton:hover{
+.aminitiesButton:hover{
     background-color: black;
     color: white;
 }

@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Gallery.module.css";
+import Modal from "./Modal";
 
 function Gallery() {
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <div className="mx-3 lg:mx-20 md:mx-15 sm:mx-10 pb-2">
       <div className="h-auto w-auto py-4 lg:sm-4 sm:py-4">
         <div className="flex justify-center mb-8 lg:mb-8 md:mb-8 sm:mb-8 ">
-          <h2 className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+          <h2
+            className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
           >
             GALLERY
           </h2>
-            
         </div>
 
         <div className=" ">
@@ -80,14 +82,15 @@ function Gallery() {
         className={`flex justify-center sm:justify-center lg:justify-end h-auto w-auto lg:mt-3 sm:mt-3 mt-1`}
       >
         <button
+          onClick={() => setModalOpen(true)}
           className={`${styles.galleryButton} w-full sm:w-52 lg:w-48 px-4 py-3 text-sm font-medium rounded-xl duration-300 md:px-3 md:py-3 md:text-base lg:px-2 lg:py-3 lg:text-sm cursor-pointer`}
         >
           DOWNLOAD RENDERS
         </button>
       </div>
+      <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 }
 
 export default Gallery;
-

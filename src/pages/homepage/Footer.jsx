@@ -6,7 +6,6 @@ function Footer() {
     <div className="h-auto px-2 lg:h-76 md:lg-76 sm:h-auto w-full bg-black text-white">
       <footer className="py-6">
         <div className="container mx-auto">
-         
           <div className="text-center mt-9">
             <p className={`${styles.fontWeight} text-3xl uppercase`}>
               For more information please call:

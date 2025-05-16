@@ -4,16 +4,16 @@ import styles from "./About.module.css";
 function About() {
   return (
     <div className="h-auto">
-      <div className="py-10 px-4 sm:px-6 lg:px-5">
+      <div className="py-4 lg:py-10 md:py-8 sm:py-6 px-4 sm:px-6 lg:px-5">
         {/* Title Section */}
         <div className="text-center">
-         <div className="flex justify-center mb-4 lg:mb-6 md:mb-4 sm:mb-4 ">
-                   <h2
-                     className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
-                   >
-                   ABOUT SOBHA
-                   </h2>
-                 </div>
+          <div className="flex justify-center mb-4 lg:mb-6 md:mb-4 sm:mb-4 ">
+            <h2
+              className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
+            >
+              ABOUT SOBHA
+            </h2>
+          </div>
           <p
             className={`${styles.color} ${styles.font} flex justify-center text-3xl mb-5`}
           >
@@ -24,7 +24,7 @@ function About() {
         {/* Description Section */}
         <div className="max-w-6xl mx-auto">
           <p
-            className={`${styles.color} ${styles.fontParagraph} leading-relaxed text-justify mb-8 px-4 sm:px-8`}
+            className={`${styles.color} ${styles.fontParagraph} leading-relaxed text-left mb-8 px-4 sm:px-8`}
           >
             Sobha Group is bringing its world-class residential experience to
             Sector 36, Greater Noida, offering luxurious 2, 3 & 4 BHK
@@ -59,7 +59,7 @@ function About() {
               <p
                 className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl px-0 lg:px-5 md:px-8`}
               >
-                of  Project Delivered
+                of Project Delivered
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
