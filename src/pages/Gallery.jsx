@@ -7,10 +7,10 @@ function Gallery() {
       <div className="h-auto w-auto py-4 lg:sm-4 sm:py-4">
         <div className="flex justify-center mb-8 lg:mb-8 md:mb-8 sm:mb-8 ">
           <h2
-            className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
           >
             GALLERY
           </h2>
+            className={`${styles.color} text-lg lg:text-3xl md:text-3xl sm:text-2xl ${styles.font} `}
         </div>
 
         <div className=" ">
@@ -41,7 +41,7 @@ function Gallery() {
                 <img
                   src="/images/gallery_img3.jpg"
                   alt="Living Room"
-                  className="w-full h-auto rounded-lg shadow-md"
+                  className="w-full h-auto  shadow-md"
                 />
               </div>
             </div>
