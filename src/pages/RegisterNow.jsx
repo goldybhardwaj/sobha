@@ -30,7 +30,7 @@ function RegisterNow() {
 
 
   return (
-    <div className="w-full min-h-screen mt-4 md:mt-6 lg:mt-8 px-4 sm:px-6 md:px-8">
+    <div className="w-full h-auto mb-4 lg:mb-6 sm:mb-2 mt-4 md:mt-6 lg:mt-8 px-4 sm:px-6 md:px-8">
   <div className="max-w-7xl mx-auto">
     {/* Title */}
     <div className="w-full text-center  sm:ml-10 md:ml-8 lg:ml-12 mb-6 md:mb-8">

@@ -3,7 +3,7 @@ import styles from "./About.module.css";
 
 function About() {
   return (
-    <div className="min-h-screen">
+    <div className="h-auto">
       <div className="py-10 px-4 sm:px-6 lg:px-5">
         {/* Title Section */}
         <div className="text-center">
@@ -49,31 +49,31 @@ function About() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6">
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-              <p className="text-gray-600 text-sm sm:text-base uppercase">
+              <p className="text-gray-600 text-lg lg:text-2xl sm:text-base uppercase">
                 25 MILLION SQ.M.
               </p>
               <p
-                className={`${styles.color} ${styles.fontCard} text-3xl  mt-2`}
+                className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl`}
               >
                 of project Delivered
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-              <p className="text-gray-600 text-sm sm:text-base uppercase">
+              <p className="text-gray-600 text-lg lg:text-2xl sm:text-base uppercase">
                 24 MILLION SQ.M.
               </p>
               <p
-                className={`${styles.color} ${styles.fontCard} text-3xl  mt-2`}
+                className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl`}
               >
                 Of Under Development
               </p>
             </div>
             <div className="bg-white rounded-2xl shadow-lg p-6 text-center">
-              <p className="text-gray-600 text-sm sm:text-base uppercase">
+              <p className="text-gray-600 text-lg lg:text-2xl sm:text-base uppercase">
                 68 years
               </p>
               <p
-                className={`${styles.color} ${styles.fontCard} text-3xl  mt-2`}
+                className={`${styles.color} ${styles.fontCard} text-lg sm:text-2xl mt-2 lg:text-3xl md:text-3xl`}
               >
                 Of Expertise in Residential
               </p>
