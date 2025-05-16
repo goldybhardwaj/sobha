@@ -1,31 +1,44 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import styles from "./Modal.module.css";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { BASE_API } from "../../../config";
 
 const Modal = ({ isOpen, onClose }) => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const [user, setUser] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  // });
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setUser((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submitted User:", user);
-    // Reset form
-    setUser({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const submitHandler = async (form) => {
+    try {
+      const { data } = await axios.post(`${BASE_API}/api/v1/users`, form);
+
+      if (data.status === "success") {
+        alert("Your details have been submitted successfully!");
+      }
+
+      reset();
+      onClose();
+    } catch {
+      alert("Something went wrong! Please try again later");
+    }
   };
 
   if (!isOpen) return null;
@@ -34,9 +47,9 @@ const Modal = ({ isOpen, onClose }) => {
     <div className="fixed  inset-0 z-50 flex items-center justify-center bg bg-opacity-50 px-3">
       <div className="relative">
         <div className="absolute top-3 right-3 lg:right-0 md:right-0 sm:right-1">
-          <button
+          <button 
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+            className="text-gray-500 hover:text-gray-700 focus:outline-none cursor-pointer"
             aria-label="Close modal"
           >
             <svg
@@ -62,63 +75,76 @@ const Modal = ({ isOpen, onClose }) => {
           >
             Contact Us{" "}
           </div>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <input
-                type="text"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
-                placeholder="Name*"
-                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
-              />
-            </div>
-            <div>
-              <input
-                name="email"
-                type="email"
-                value={user.email}
-                onChange={handleChange}
-                placeholder="Email*"
-                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
-              />
-            </div>
-            <div>
-              <input
-                name="phone"
-                type="tel"
-                minLength="10"
-                value={user.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
-              />
-            </div>
-            <div>
-              <textarea
-                name="message"
-                value={user.message}
-                onChange={handleChange}
-                placeholder="Message"
-                rows="4"
-                className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-              ></textarea>
-            </div>
-            <button
-              className={`${styles.formButton} ${styles.modalButton} w-full  p-3 rounded-xl  text-sm sm:text-base font-medium cursor-pointer`}
-            >
-              SUBMIT
-            </button>
-            <button
-              onClick={onClose}
-              className={`${styles.formButton} ${styles.modalButton} w-full  p-3 rounded-xl  text-sm sm:text-base font-medium cursor-pointer`}
-            >
-              CANCEL
-            </button>
-          </form>
+         <form
+                        onSubmit={handleSubmit(submitHandler)}
+                        className="space-y-4"
+                      >
+                        <div>
+                          <input
+                            type="text"
+                            placeholder="Name*"
+                            className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                            {...register("name", {
+                              required: "Name is required.",
+                            })}
+                          />
+        
+                          {errors.name && (
+                            <p className="text-sm text-red-600 ml-3 mt-1.5">
+                              {errors.name.message}
+                            </p>
+                          )}
+                        </div>
+                        <div>
+                          <input
+                            type="email"
+                            placeholder="Email*"
+                            className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                            {...register("email", {
+                              required: "Email is required.",
+                            })}
+                          />
+        
+                          {errors.email && (
+                            <p className="text-sm text-red-600 ml-3 mt-1.5">
+                              {errors.email.message}
+                            </p>
+                          )}
+                        </div>
+                        <div>
+                          <input
+                            type="tel"
+                            placeholder="Phone Number"
+                            className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                            {...register("phone", {
+                              minLength: {
+                                value: 10,
+                                message: "Min length should be 10.",
+                              },
+                            })}
+                            maxLength={10}
+                          />
+        
+                          {errors.phone && (
+                            <p className="text-sm text-red-600 ml-3 mt-1.5">
+                              {errors.phone.message}
+                            </p>
+                          )}
+                        </div>
+                        <div>
+                          <textarea
+                            placeholder="Message"
+                            rows="4"
+                            className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                            {...register("message")}
+                          ></textarea>
+                        </div>
+                        <button
+                          className={`${styles.formButton} w-full bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition-colors text-sm sm:text-base font-medium cursor-pointer`}
+                        >
+                          SUBMIT
+                        </button>
+                      </form>
 
           <div className="flex justify-end space-x-3"></div>
         </div>
