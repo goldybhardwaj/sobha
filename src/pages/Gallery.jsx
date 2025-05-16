@@ -80,7 +80,7 @@ function Gallery() {
         className={`flex justify-center sm:justify-center lg:justify-end h-auto w-auto lg:mt-3 sm:mt-3 mt-1`}
       >
         <button
-          className={`${styles.galleryButton} w-full sm:w-52 lg:w-48 px-4 py-3 text-sm font-medium rounded-xl duration-300 md:px-3 md:py-3 md:text-base lg:px-2 lg:py-3 lg:text-sm`}
+          className={`${styles.galleryButton} w-full sm:w-52 lg:w-48 px-4 py-3 text-sm font-medium rounded-xl duration-300 md:px-3 md:py-3 md:text-base lg:px-2 lg:py-3 lg:text-sm cursor-pointer`}
         >
           DOWNLOAD RENDERS
         </button>
@@ -90,10 +90,4 @@ function Gallery() {
 }
 
 export default Gallery;
-{
-  /* <div className="flex text-center sm:text-center lg:text-end h-auto bg-gray-100">
-<button className="w-32 sm:w-40 lg:w-60  py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 md:px-6 md:py-3 md:text-base lg:px-8 lg:py-4 lg:text-lg">
-    Click Me
-</button>
-</div> */
-}
+

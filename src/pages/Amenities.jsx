@@ -78,7 +78,7 @@ function Amenities() {
         className={`flex justify-center sm:justify-center lg:justify-end h-auto w-auto lg:mt-3 sm:mt-3 mt-1`}
       >
         <button
-          className={`${styles.galleryButton} w-full sm:w-52 lg:w-48 px-4 py-3 text-sm font-medium rounded-xl duration-300 md:px-3 md:py-3 md:text-base lg:px-2 lg:py-3 lg:text-sm`}
+          className={`${styles.galleryButton} w-full sm:w-52 lg:w-48 px-4 py-3 text-sm font-medium rounded-xl duration-300 md:px-3 md:py-3 md:text-base lg:px-2 lg:py-3 lg:text-sm cursor-pointer`}
         >
           DISCOVER MORE
         </button>

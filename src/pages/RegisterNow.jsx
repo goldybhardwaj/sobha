@@ -90,7 +90,7 @@ function RegisterNow() {
               ></textarea>
             </div>
             <button
-              className={`${styles.formButton} w-full bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition-colors text-sm sm:text-base font-medium`}
+              className={`${styles.formButton} w-full bg-teal-600 text-white p-3 rounded-xl hover:bg-teal-700 transition-colors text-sm sm:text-base font-medium cursor-pointer`}
             >
               SUBMIT
             </button>
