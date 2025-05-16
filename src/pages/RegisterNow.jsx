@@ -39,12 +39,12 @@ function RegisterNow() {
       const { data } = await axios.post(`${BASE_API}/api/v1/users`, form);
 
       if (data.status === 'success') {
-        alert('Account created successfully!')
+        alert('Your details have been submitted successfully!')
       }
 
       reset();
     } catch {
-      alert("Failed to create account. Please try again later");
+      alert("Something went wrong! Please try again later");
     }
   }
 
@@ -91,10 +91,9 @@ function RegisterNow() {
             <div>
               <input
                 type="tel"
-                placeholder="Phone Number*"
+                placeholder="Phone Number"
                 className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
                 {...register('phone', {
-                  required: 'Phone number is required.',
                   minLength: {
                     value: 10,
                     message: 'Min length should be 10.'
