@@ -32,7 +32,7 @@ function RegisterNow() {
     //     });
     //   };
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const submitHandler = async (form) => {
     try {
@@ -41,6 +41,8 @@ function RegisterNow() {
       if (data.status === 'success') {
         alert('Account created successfully!')
       }
+
+      reset();
     } catch {
       alert("Failed to create account. Please try again later");
     }
