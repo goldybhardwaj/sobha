@@ -1,33 +1,50 @@
-import React,{ useState }from "react";
+// import React,{ useState }from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 import styles from "./RegisterNow.module.css";
+import { BASE_API } from "../../config";
 
 function RegisterNow() {
-    const [user, setUser] =useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUser(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
-      };
+    // const [user, setUser] =useState({
+    //     name: '',
+    //     email: '',
+    //     phone: '',
+    //     message: ''
+    //   });
+    //   const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setUser(prevState => ({
+    //       ...prevState,
+    //       [name]: value
+    //     }));
+    //   };
 
-      const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Submitted User:', user);
-        // Reset form
-        setUser({
-          name: '',
-          email: '',
-          phone: '',
-          message:''
-        });
-      };
+    //   const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     console.log('Submitted User:', user);
+    //     // Reset form
+    //     setUser({
+    //       name: '',
+    //       email: '',
+    //       phone: '',
+    //       message:''
+    //     });
+    //   };
 
+  const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const submitHandler = async (form) => {
+    try {
+      const { data } = await axios.post(`${BASE_API}/api/v1/users`, form);
+
+      if (data.status === 'success') {
+        alert('Account created successfully!')
+      }
+    } catch {
+      alert("Failed to create account. Please try again later");
+    }
+  }
 
   return (
     <div className="w-full h-auto mb-4 lg:mb-6 sm:mb-2 mt-4 md:mt-6 lg:mt-8 px-4 sm:px-6 md:px-8">
@@ -44,49 +61,54 @@ function RegisterNow() {
       <div className="w-full max-w-4xl flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8">
         {/* Form Section */}
         <div className="w-full lg:w-3/5 bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg flex flex-col justify-center">
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit(submitHandler)} className="space-y-4">
             <div>
               <input
                 type="text"
-                name="name"
-                value={user.name}
-                onChange={handleChange}
                 placeholder="Name*"
                 className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
+                {...register('name', {
+                  required: 'Name is required.',
+                })}
               />
+
+              {errors.name && <p className="text-sm text-red-600 ml-3 mt-1.5">{errors.name.message}</p>}
             </div>
             <div>
               <input
-                name="email"
                 type="email"
-                value={user.email}
-                onChange={handleChange}
                 placeholder="Email*"
                 className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
+                {...register('email', {
+                  required: "Email is required."
+                })}
               />
+
+              {errors.email && <p className="text-sm text-red-600 ml-3 mt-1.5">{errors.email.message}</p>}
             </div>
             <div>
               <input
-                name="phone"
                 type="tel"
-                minLength="10"
-                value={user.phone}
-                onChange={handleChange}
                 placeholder="Phone Number*"
                 className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
-                required
+                {...register('phone', {
+                  required: 'Phone number is required.',
+                  minLength: {
+                    value: 10,
+                    message: 'Min length should be 10.'
+                  },
+                })}
+                maxLength={10}
               />
+
+              {errors.phone && <p className="text-sm text-red-600 ml-3 mt-1.5">{errors.phone.message}</p>}
             </div>
             <div>
               <textarea
-                name="message"
-                value={user.message}
-                onChange={handleChange}
                 placeholder="Message"
                 rows="4"
                 className="w-full p-3 border border-gray-200 rounded-3xl focus:outline-none focus:ring-2 focus:ring-teal-500 placeholder-gray-500 text-sm sm:text-base"
+                {...register('message')}
               ></textarea>
             </div>
             <button
