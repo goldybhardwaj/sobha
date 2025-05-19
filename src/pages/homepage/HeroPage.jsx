@@ -8,7 +8,7 @@ function HeroPage() {
     <div>
       <div className="w-full h-auto lg:h-screen md:h-80 sm:h-60">
         <div
-          className={` w-auto h-56 lg:h-screen md:h-80 sm:h-60 bg-[url('/images/banner.jpg')] bg-cover bg-center bg-no-repeat relative`}
+          className={` w-auto h-56 lg:h-screen md:h-80 sm:h-60 bg-[url('/images/hero1.png')] bg-cover bg-center bg-no-repeat relative`}
         >
           <div
             className="absolute flex flex-col  space-y-4 

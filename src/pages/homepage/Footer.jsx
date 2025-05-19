@@ -8,12 +8,12 @@ function Footer() {
         <div className="container mx-auto">
           <div className="text-center mt-9">
             <p className={`${styles.fontWeight} text-3xl uppercase`}>
-              For more information please call:
+              For more information please Email at :
             </p>
           </div>
           <div className="text-center mt-5">
             <p className={`${styles.fontWeight} text-3xl uppercase`}>
-              +91-9958376333
+            sales@sobhalimited.co.in
             </p>
           </div>
           <div className="text-center mt-7">
