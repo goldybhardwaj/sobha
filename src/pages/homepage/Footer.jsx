@@ -12,7 +12,7 @@ function Footer() {
             </p>
           </div>
           <div className="text-center mt-5">
-            <p className={`${styles.fontWeight} text-base lg:text-3xl md:text-2xl sm:text-lg uppercase`}>
+            <p className={`${styles.fontWeight} text-base lg:text-3xl md:text-2xl sm:text-lg`}>
             sales@sobhalimited.co.in
             </p>
           </div>
