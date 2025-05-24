@@ -1,24 +1,8 @@
-// import React, { useState } from "react";
 import styles from "./Modal.module.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
-import { BASE_API } from "../../../config";
+import { apiContactUs } from "../../services/apiContactUs";
 
 const Modal = ({ isOpen, onClose }) => {
-  // const [user, setUser] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   message: "",
-  // });
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setUser((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
-
   const {
     register,
     handleSubmit,
@@ -26,9 +10,9 @@ const Modal = ({ isOpen, onClose }) => {
     reset,
   } = useForm();
 
-  const submitHandler = async (form) => {
+  const submitHandler = async (formData) => {
     try {
-      const { data } = await axios.post(`${BASE_API}/api/v1/users`, form);
+      const data = await apiContactUs(formData);
 
       if (data.status === "success") {
         alert("Your details have been submitted successfully!");
@@ -36,8 +20,8 @@ const Modal = ({ isOpen, onClose }) => {
 
       reset();
       onClose();
-    } catch {
-      alert("Something went wrong! Please try again later");
+    } catch (err) {
+      alert(err.message);
     }
   };
 
