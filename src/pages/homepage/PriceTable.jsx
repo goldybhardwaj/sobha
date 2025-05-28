@@ -49,7 +49,7 @@ function PriceTable() {
                       </td>
                     </tr>
                     <tr className="border-b hover:bg-gray-50">
-                      <td className="py-2 px-2 sm:py-3 sm:px-4">3 BHK+2T+3T</td>
+                      <td className="py-2 px-2 sm:py-3 sm:px-4">3 BHK+2T/3T</td>
                       <td className="py-2 px-2 sm:py-3 sm:px-4">
                         1500-1800 Sq.Ft.
                       </td>
